@@ -9,14 +9,14 @@ services:
             - POSTGRES_PASSWORD=odoo@odoosrv.test
             - POSTGRES_DB=postgres
         volumes:
-            - /home/docker/GTSI/Postgresql/Conf/postgresql.conf:/etc/postgresql/postgresql.conf
-            - data-db-GTSI:/var/lib/postgresql/data
-        container_name: postgresql-odoo14-GTSI
+            - /home/docker/dev-GTSI/Postgresql/Conf/postgresql.conf:/etc/postgresql/postgresql.conf
+            - data-db-dev-GTSI:/var/lib/postgresql/data
+        container_name: postgresql-odoo14-dev-GTSI
         restart: always
         networks:
-            - PG11-GTSI-network
+            - PG11--dev-GTSI-network
 volumes:
-    data-db-GTSI:
+    data-db-dev-GTSI:
 networks:
-    PG11-GTSI-network:
+    PG11-dev-GTSI-network:
 
