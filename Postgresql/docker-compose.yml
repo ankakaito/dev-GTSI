@@ -14,7 +14,7 @@ services:
         container_name: postgresql-odoo14-dev-GTSI
         restart: always
         networks:
-            - PG11--dev-GTSI-network
+            - PG11-dev-GTSI-network
 volumes:
     data-db-dev-GTSI:
 networks:
