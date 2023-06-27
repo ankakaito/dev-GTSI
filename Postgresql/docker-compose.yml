@@ -1,0 +1,22 @@
+version: '3'
+services:
+    db:
+        image: "postgres:11.7"
+        ports:
+            - "28042:5432"
+        environment:
+            - POSTGRES_USER=odoo
+            - POSTGRES_PASSWORD=odoo@odoosrv.test
+            - POSTGRES_DB=postgres
+        volumes:
+            - /home/docker/GTSI/Postgresql/Conf/postgresql.conf:/etc/postgresql/postgresql.conf
+            - data-db-GTSI:/var/lib/postgresql/data
+        container_name: postgresql-odoo14-GTSI
+        restart: always
+        networks:
+            - PG11-GTSI-network
+volumes:
+    data-db-GTSI:
+networks:
+    PG11-GTSI-network:
+
