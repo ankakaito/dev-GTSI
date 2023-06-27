@@ -1,0 +1,22 @@
+version: '3'
+services:
+    odoo:
+
+        image: "invosasystems/odoo-invosa:14.0"
+        ports:
+                - "8081:8069"
+        volumes:
+            - data-odoo-dev-GTSI:/var/lib/odoo
+            - /home/docker/dev-GTSI/Odoo14/Custom/EE14:/mnt/ins-addons
+            - /home/docker/dev-GTSI/Odoo14/BackupDB:/mnt/odoo-db-backups
+            - /home/docker/dev-GTSI/Odoo14/Conf/odoo.conf:/etc/odoo/odoo.conf
+        container_name: odoo-14-dev-GTSI
+        restart: always
+        networks:
+            - postgresql_PG11-dev-GTSI-network
+volumes:
+    data-odoo-dev-GTSI:
+    
+networks:
+    postgresql_PG11-dev-GTSI-network:
+        external: true
